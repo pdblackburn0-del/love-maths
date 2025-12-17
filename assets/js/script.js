@@ -76,7 +76,18 @@ function calculateCorrectAnswer() {
 }
 
 function incrementScore() {
-    // TODO: implement score logic
+    // implement score logic
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+
+    if (isCorrect) {
+        alert("Hey! You got it right! :D"); 
+        incrementScore();
+    } else {
+        alert(`Awwww.... you answered ${userAnswer}. The correct answer was ${correctAnswer}!`);
+        incrementWrongAnswer();
+    }
+
 }
 
 function incrementWrongAnswer() {
